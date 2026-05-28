@@ -8,6 +8,7 @@ This makes it easier to quickly select or deselect all photos for batch operatio
 
 - Adds a **Select All** button to the PhotoPrism library
 - Toggle select / deselect all items
+- **Persists selection across page reloads** using `localStorage`
 - Lightweight and simple
 - Works with PhotoPrism running on localhost
 
