@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         PhotoPrism Select All Button
-// @namespace    https://github.com/yourname/photoprism-select-all-userscript
+// @namespace    https://github.com/Ericcwang23/photoprism-select-all-userscript
 // @version      1.1
 // @description  Adds a "Select All" button to the PhotoPrism library browse page.
 // @author       Eric
@@ -46,10 +46,15 @@ function createSelectAllButton(header) {
     // Create select-all button
     const selectAllBtn = document.createElement('button');
 
-    selectAllBtn.innerHTML = `
-        <i class="mdi mdi-checkbox-multiple-outline select-off"></i>
-        <i class="mdi mdi-checkbox-multiple-marked select-on" style="display: none;"></i>
-    `;
+    const offIcon = document.createElement('i');
+    offIcon.className = 'mdi mdi-checkbox-multiple-outline select-off';
+
+    const onIcon = document.createElement('i');
+    onIcon.className = 'mdi mdi-checkbox-multiple-marked select-on';
+    onIcon.style.display = 'none';
+
+    selectAllBtn.appendChild(offIcon);
+    selectAllBtn.appendChild(onIcon);
 
     selectAllBtn.className = 'input-select';
     selectAllBtn.title = 'Select All / Deselect All';
